@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Clínica de Podologia Simone Godoy | Porto Alegre</title>
+<meta name="description" content="Podologia em Porto Alegre (Vila Nova) com atendimento cuidadoso e individual. Unhas encravadas, calos, micoses e muito mais. Agende pelo WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --rosa:#D6307A; --berry:#8F1450; --blush:#FDEAF2; --folha:#5C9A2E; --mata:#3E7320; --tinta:#3A1327;
+  --script:'Dancing Script',cursive; --sans:'Nunito',system-ui,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:4.5rem}
+body{margin:0;font-family:var(--sans);color:var(--tinta);background:#fff;line-height:1.6;-webkit-font-smoothing:antialiased}
+h1,h2,h3,p,figure,blockquote,ul{margin:0}
+ul{padding:0;list-style:none}
+a{color:inherit;text-decoration:none}
+button,input,select,textarea{font:inherit;color:inherit}
+button{cursor:pointer}
+:focus-visible{outline:3px solid var(--folha);outline-offset:3px}
+.wrap{max-width:72rem;margin:0 auto;padding:0 1.25rem}
+.section{padding:5rem 0}
+.titulo{font-family:var(--script);font-weight:700;color:var(--mata);font-size:clamp(2.2rem,5vw,3.2rem);line-height:1.1}
+.lead{font-size:1.125rem;max-width:42rem;margin-top:.75rem}
+
+/* Botões */
+.btn{display:inline-block;border-radius:999px;padding:.85rem 1.75rem;font-weight:800;border:2px solid transparent;transition:background .2s,color .2s}
+.btn-rosa{background:var(--rosa);color:#fff}.btn-rosa:hover{background:var(--berry)}
+.btn-berry{background:var(--berry);color:#fff;box-shadow:0 10px 24px rgba(143,20,80,.3)}.btn-berry:hover{background:var(--tinta)}
+.btn-verde{background:var(--folha);color:#fff}.btn-verde:hover{background:var(--mata)}
+.btn-borda{background:#fff;color:var(--berry);border-color:var(--berry)}.btn-borda:hover{background:var(--blush)}
+
+/* Cabeçalho */
+.topo{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.96);backdrop-filter:blur(6px);border-bottom:1px solid rgba(214,48,122,.12)}
+.topo .wrap{height:4rem;display:flex;align-items:center;justify-content:space-between}
+.marca{display:flex;align-items:center;gap:.5rem}
+.marca span{font-family:var(--script);font-weight:700;font-size:1.9rem;color:var(--mata);line-height:1}
+.nav{display:none;align-items:center;gap:1.75rem;font-size:.9rem;font-weight:700}
+.nav a:hover{color:var(--rosa)}
+.nav .btn{color:#fff;padding:.6rem 1.25rem}.nav .btn:hover{color:#fff}
+.menu-btn{background:none;border:0;padding:.5rem;margin-right:-.5rem}
+.menu-mob{display:none;border-top:1px solid rgba(214,48,122,.12);background:#fff;padding:.75rem 1.25rem 1.25rem;font-weight:700}
+.menu-mob.aberto{display:block}
+.menu-mob a{display:block;padding:.65rem 0}
+.menu-mob .btn{text-align:center;color:#fff;margin-top:.5rem}
+
+/* Hero */
+.hero{position:relative;overflow:hidden;background:var(--blush)}
+.hero-onda{position:absolute;left:0;right:0;bottom:0;width:100%;height:70%;min-height:280px}
+.hero .wrap{position:relative;display:grid;gap:2.5rem;align-items:center;padding-top:3.5rem;padding-bottom:7rem}
+.selo{display:inline-block;background:#fff;border-radius:999px;padding:.4rem 1rem;font-size:.9rem;font-weight:800;box-shadow:0 1px 3px rgba(0,0,0,.1)}
+.estrelas{color:#f59e0b}
+.hero h1{font-family:var(--script);font-weight:700;color:var(--berry);font-size:clamp(3rem,8vw,4.6rem);line-height:1.05;margin-top:1.25rem}
+.hero p.sub{font-size:1.125rem;max-width:36rem;margin-top:1.25rem}
+.acoes{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:2rem}
+.hero-pe{display:none;justify-content:center}
+.hero-pe svg{width:15rem;filter:drop-shadow(0 12px 18px rgba(0,0,0,.2))}
+.entra>*{animation:sobe .7s ease both}
+.entra>*:nth-child(2){animation-delay:.12s}.entra>*:nth-child(3){animation-delay:.24s}.entra>*:nth-child(4){animation-delay:.36s}
+@keyframes sobe{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+
+/* Faixa */
+.faixa{background:var(--berry);color:#fff}
+.faixa .wrap{display:grid;gap:.75rem;padding-top:1.25rem;padding-bottom:1.25rem;text-align:center;font-weight:700}
+
+/* Serviços */
+.grade{display:grid;gap:1.25rem;margin-top:2.5rem}
+.card{border-radius:1.5rem;padding:1.5rem;background:#fff;border:2px solid rgba(214,48,122,.15)}
+.card.alt{background:var(--blush);border-color:var(--blush)}
+.card h3{font-size:1.25rem;font-weight:800;color:var(--berry);margin-top:.75rem}
+.card p{margin-top:.5rem}
+.card a{display:inline-block;margin-top:1rem;font-weight:800;color:var(--rosa);text-decoration:underline;text-underline-offset:4px}
+.card a:hover{color:var(--berry)}
+.nota{margin-top:1.5rem;font-size:.9rem;opacity:.7}
+
+/* Sobre */
+.sobre{background:var(--blush)}
+.sobre .wrap{display:grid;gap:3rem;align-items:center}
+.foto{background:linear-gradient(100deg,#D6307A,#EC6FA3 55%,#F7B9D2);border-radius:6rem 2.5rem 2.5rem 2.5rem;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;padding:2rem;text-align:center;color:#fff}
+.foto .nome{font-family:var(--script);font-weight:700;font-size:clamp(2.8rem,6vw,3.8rem);line-height:1.1}
+.sobre p.t{font-size:1.125rem;margin-top:1rem}
+.checks{margin-top:1.5rem;font-weight:700;display:grid;gap:.75rem}
+.checks li{display:flex;gap:.75rem}
+.checks i{color:var(--folha);font-style:normal}
+
+/* Depoimentos */
+.dep-topo{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:1rem}
+.setas{display:flex;gap:.5rem}
+.seta{width:2.75rem;height:2.75rem;border-radius:50%;border:2px solid var(--rosa);background:#fff;color:var(--rosa);font-size:1.4rem;line-height:1;transition:background .2s,color .2s}
+.seta:hover{background:var(--rosa);color:#fff}
+.depo{margin-top:2.5rem;background:var(--blush);border-radius:1.5rem;padding:2rem;min-height:14rem}
+.depo blockquote{font-size:1.25rem;line-height:1.7}
+.depo figcaption{margin-top:1.5rem;display:flex;align-items:center;gap:.75rem}
+.ini{width:2.75rem;height:2.75rem;border-radius:50%;background:var(--rosa);color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center}
+.depo small{display:block;font-size:.85rem;opacity:.75}
+.pontos{margin-top:1.25rem;display:flex;justify-content:center;gap:.5rem}
+.pontos button{width:.7rem;height:.7rem;padding:0;border:0;border-radius:50%;background:rgba(214,48,122,.3)}
+.pontos button.on{background:var(--rosa)}
+
+/* Agendamento */
+.agendar{background:linear-gradient(100deg,#D6307A,#EC6FA3 55%,#F7B9D2)}
+.agendar .wrap{display:grid;gap:3rem;align-items:start}
+.agendar .chamada{color:#fff}
+.agendar h2{font-family:var(--script);font-weight:700;font-size:clamp(2.8rem,6vw,3.8rem);line-height:1.1}
+.agendar .chamada p{margin-top:1rem;font-size:1.125rem;max-width:28rem}
+.agendar .tel{font-weight:800;font-size:1.25rem;margin-top:1.5rem}
+form{background:#fff;border-radius:1.5rem;padding:1.5rem;box-shadow:0 25px 50px rgba(0,0,0,.25);display:grid;gap:1rem}
+label{display:block;font-weight:800;margin-bottom:.25rem}
+input,select,textarea{width:100%;border:2px solid rgba(214,48,122,.2);border-radius:.75rem;padding:.75rem 1rem;background:#fff;outline:none}
+input:focus,select:focus,textarea:focus{border-color:var(--rosa)}
+.erro{display:none;color:#b91c1c;font-size:.9rem;margin-top:.25rem}
+.erro.on{display:block}
+form .btn{width:100%;font-size:1.1rem;padding:1rem;border:0}
+.aviso{font-size:.75rem;text-align:center;opacity:.65}
+
+/* FAQ */
+.faq-wrap{max-width:48rem}
+#faq{margin-top:2.5rem;border-top:1px solid rgba(214,48,122,.2);border-bottom:1px solid rgba(214,48,122,.2)}
+.faq-item+.faq-item{border-top:1px solid rgba(214,48,122,.2)}
+.faq-item h3{font-size:1.1rem}
+.faq-item button{width:100%;display:flex;justify-content:space-between;align-items:center;gap:1rem;text-align:left;background:none;border:0;padding:1.25rem 0;font-weight:800}
+.faq-corpo{display:grid;grid-template-rows:0fr;transition:grid-template-rows .3s}
+.faq-corpo>div{overflow:hidden}
+.faq-corpo p{padding-bottom:1.25rem}
+.faq-item.aberto .faq-corpo{grid-template-rows:1fr}
+.chev{flex-shrink:0;transition:transform .3s}
+.faq-item.aberto .chev{transform:rotate(180deg)}
+
+/* Contato */
+.contato{background:var(--blush)}
+.contato .wrap{display:grid;gap:2.5rem;align-items:center}
+address{font-style:normal;margin-top:1.5rem;font-size:1.1rem;display:grid;gap:1rem}
+address a{color:var(--berry);font-weight:800;text-decoration:underline}
+.mapa{border-radius:1.5rem;overflow:hidden;border:4px solid #fff;box-shadow:0 20px 40px rgba(0,0,0,.15);aspect-ratio:4/3}
+.mapa iframe{width:100%;height:100%;border:0}
+.mapa-card{position:relative;display:block;width:100%;height:100%}
+.mapa-card svg{position:absolute;inset:0;width:100%;height:100%}
+.mapa-info{position:absolute;left:1rem;right:1rem;bottom:1rem;background:#fff;border-radius:1rem;padding:1rem;display:grid;gap:.25rem;justify-items:start;font-size:.95rem;box-shadow:0 6px 18px rgba(0,0,0,.15)}
+.mapa-info strong{color:var(--berry);font-size:1.05rem}
+.mapa-info .btn{margin-top:.5rem;padding:.55rem 1.25rem;font-size:.9rem}
+
+/* Rodapé */
+footer{background:var(--tinta);color:rgba(255,255,255,.9)}
+footer .wrap{padding-top:2.5rem;padding-bottom:2.5rem;display:flex;flex-direction:column;align-items:center;gap:1rem;text-align:center;font-size:.9rem}
+footer .nome{font-family:var(--script);font-weight:700;font-size:1.9rem;color:#fff;line-height:1.2}
+
+/* Botão fixo */
+.fab{position:fixed;right:1.25rem;bottom:1.25rem;z-index:50;display:flex;align-items:center;gap:.5rem;background:var(--folha);color:#fff;font-weight:800;border-radius:999px;padding:.85rem 1.25rem;box-shadow:0 10px 25px rgba(0,0,0,.25);opacity:0;transform:translateY(1.5rem);pointer-events:none;transition:opacity .3s,transform .3s,background .2s}
+.fab:hover{background:var(--mata)}
+.fab.on{opacity:1;transform:none;pointer-events:auto}
+
+@media (min-width:768px){
+  .nav{display:flex}.menu-btn{display:none}.menu-mob{display:none!important}
+  .hero .wrap{grid-template-columns:1.3fr 1fr;padding-top:5rem;padding-bottom:10rem}
+  .hero-pe{display:flex}
+  .faixa .wrap{grid-template-columns:repeat(3,1fr)}
+  .grade{grid-template-columns:repeat(2,1fr)}
+  .sobre .wrap,.agendar .wrap,.contato .wrap{grid-template-columns:1fr 1fr}
+  .depo{padding:3rem}.depo blockquote{font-size:1.5rem}
+  form{padding:2rem}
+  footer .wrap{flex-direction:row;justify-content:space-between;text-align:left}
+}
+@media (min-width:1024px){.grade{grid-template-columns:repeat(3,1fr)}}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<header class="topo" id="top">
+  <div class="wrap">
+    <a href="#top" class="marca" aria-label="Simone Godoy, início">
+      <svg width="30" height="34" viewBox="0 0 60 68" aria-hidden="true"><use href="#pe"/></svg>
+      <span>Simone Godoy</span>
+    </a>
+    <nav class="nav" aria-label="Principal">
+      <a href="#servicos">Serviços</a><a href="#sobre">Sobre</a><a href="#depoimentos">Depoimentos</a>
+      <a href="#duvidas">Dúvidas</a><a href="#contato">Como chegar</a>
+      <a href="#agendar" class="btn btn-rosa">Agendar consulta</a>
+    </nav>
+    <button class="menu-btn" id="menuBtn" aria-label="Abrir menu" aria-expanded="false" aria-controls="menuMob">
+      <svg width="26" height="26" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h18M4 13h18M4 19h18"/></svg>
+    </button>
+  </div>
+  <nav class="menu-mob" id="menuMob" aria-label="Menu móvel">
+    <a href="#servicos">Serviços</a><a href="#sobre">Sobre</a><a href="#depoimentos">Depoimentos</a>
+    <a href="#duvidas">Dúvidas</a><a href="#contato">Como chegar</a>
+    <a href="#agendar" class="btn btn-rosa">Agendar consulta</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <svg class="hero-onda" viewBox="0 0 1440 520" preserveAspectRatio="none" aria-hidden="true">
+    <defs><linearGradient id="g1" x1="0" x2="1"><stop offset="0" stop-color="#D6307A"/><stop offset=".6" stop-color="#EC6FA3"/><stop offset="1" stop-color="#F9C6DB"/></linearGradient></defs>
+    <path d="M0 140 C 260 330, 520 360, 760 250 C 1020 130, 1250 60, 1440 120 L1440 520 L0 520 Z" fill="url(#g1)"/>
+    <path d="M0 140 C 260 330, 520 360, 760 250 C 1020 130, 1250 60, 1440 120" fill="none" stroke="#fff" stroke-width="5" opacity=".7"/>
+  </svg>
+  <div class="wrap">
+    <div class="entra">
+      <p class="selo"><span class="estrelas" aria-hidden="true">★★★★★</span> 5,0 · 26 avaliações no Google</p>
+      <h1>Sempre pensando no melhor para você.</h1>
+      <p class="sub">Podologia em Porto Alegre com atendimento tranquilo, atencioso e individual. Cuidamos dos seus pés com técnica e carinho, na Vila Nova.</p>
+      <div class="acoes">
+        <a href="#agendar" class="btn btn-berry">Agendar minha consulta</a>
+        <a href="https://wa.me/5551998983084" target="_blank" rel="noopener" class="btn btn-borda">Chamar no WhatsApp</a>
+      </div>
+    </div>
+    <div class="hero-pe"><svg viewBox="0 0 60 68" aria-hidden="true"><use href="#pe"/></svg></div>
+  </div>
+</section>
+
+<section class="faixa">
+  <div class="wrap">
+    <p>Técnica em Podologia, registro FEPLAN 05/5412</p>
+    <p>Atendimento individual e sem pressa</p>
+    <p>Espaço acolhedor para todas as pessoas (LGBTQ+ friendly)</p>
+  </div>
+</section>
+
+<section id="servicos" class="section">
+  <div class="wrap">
+    <h2 class="titulo">Cuidados para pés saudáveis e confortáveis</h2>
+    <p class="lead">Cada tratamento começa com uma conversa e uma avaliação dos seus pés. Veja no que podemos ajudar:</p>
+    <div class="grade" id="servGrid"></div>
+    <p class="nota">Não encontrou o que procura? Conte seu caso pelo WhatsApp e a Simone orienta você.</p>
+  </div>
+</section>
+
+<section id="sobre" class="section sobre">
+  <div class="wrap">
+    <div class="foto">
+      <div>
+        <p class="nome">Simone Godoy</p>
+        <p style="font-weight:800;margin-top:.5rem">Técnica em Podologia</p>
+        <p style="font-size:.9rem;opacity:.9">FEPLAN 05/5412</p>
+        <!-- Troque este bloco por uma foto da Simone -->
+      </div>
+    </div>
+    <div>
+      <h2 class="titulo">Um atendimento que escuta primeiro</h2>
+      <p class="t">Para a Simone, tratar o pé é entender a pessoa. Cada paciente é ouvido com atenção para que o cuidado respeite a sua rotina, o seu histórico e o seu ritmo.</p>
+      <p class="t">Quem já passou por aqui fala do carinho, do profissionalismo e de como a conversa leve ajuda a relaxar durante a consulta.</p>
+      <ul class="checks">
+        <li><i aria-hidden="true">✔</i> Avaliação do caso antes de qualquer procedimento</li>
+        <li><i aria-hidden="true">✔</i> Tratamento pensado para a realidade de cada paciente</li>
+        <li><i aria-hidden="true">✔</i> Ambiente tranquilo, com conversa e acolhimento</li>
+      </ul>
+      <a href="#agendar" class="btn btn-rosa" style="margin-top:2rem">Quero ser atendido(a)</a>
+    </div>
+  </div>
+</section>
+
+<section id="depoimentos" class="section">
+  <div class="wrap">
+    <div class="dep-topo">
+      <div>
+        <h2 class="titulo">Quem passou por aqui recomenda</h2>
+        <p class="lead" style="margin-top:.5rem">Nota 5,0 em 26 avaliações no Google Maps.</p>
+      </div>
+      <div class="setas">
+        <button class="seta" id="prev" aria-label="Depoimento anterior">‹</button>
+        <button class="seta" id="next" aria-label="Próximo depoimento">›</button>
+      </div>
+    </div>
+    <figure class="depo" aria-live="polite">
+      <blockquote id="depoTxt"></blockquote>
+      <figcaption>
+        <span class="ini" id="depoIni"></span>
+        <span><strong id="depoNome"></strong><small>Avaliação no Google · <span class="estrelas">★★★★★</span></small></span>
+      </figcaption>
+    </figure>
+    <div class="pontos" id="dots"></div>
+  </div>
+</section>
+
+<section id="agendar" class="section agendar">
+  <div class="wrap">
+    <div class="chamada">
+      <h2>Vamos cuidar dos seus pés?</h2>
+      <p>Preencha ao lado e enviaremos seu pedido direto para o WhatsApp da Simone. Ela confirma o melhor horário com você.</p>
+      <p class="tel">(51) 99898-3084</p>
+      <p style="margin-top:.25rem;font-size:1rem">Av. Rodrigues da Fonseca, 1753 · Vila Nova</p>
+    </div>
+    <form id="form" novalidate>
+      <div>
+        <label for="nome">Seu nome</label>
+        <input id="nome" required autocomplete="name">
+        <p class="erro">Informe seu nome para continuarmos.</p>
+      </div>
+      <div><label for="servico">Do que você precisa?</label><select id="servico"></select></div>
+      <div>
+        <label for="periodo">Melhor período</label>
+        <select id="periodo"><option>Manhã</option><option selected>Tarde</option><option>Sem preferência</option></select>
+      </div>
+      <div><label for="obs">Quer contar algo mais? (opcional)</label><textarea id="obs" rows="2"></textarea></div>
+      <button type="submit" class="btn btn-verde">Enviar pedido pelo WhatsApp</button>
+      <p class="aviso">Você será levado ao WhatsApp com a mensagem pronta. Nada é enviado até você tocar em enviar.</p>
+    </form>
+  </div>
+</section>
+
+<section id="duvidas" class="section">
+  <div class="wrap faq-wrap">
+    <h2 class="titulo" style="text-align:center">Dúvidas frequentes</h2>
+    <div id="faq"></div>
+  </div>
+</section>
+
+<section id="contato" class="section contato">
+  <div class="wrap">
+    <div>
+      <h2 class="titulo">Venha nos visitar</h2>
+      <address>
+        <p><strong>Endereço</strong><br>Av. Rodrigues da Fonseca, 1753<br>Vila Nova, Porto Alegre, RS · CEP 91740-800</p>
+        <p><strong>Telefone e WhatsApp</strong><br><a href="tel:+5551998983084">(51) 99898-3084</a></p>
+        <p><strong>Horários</strong><br>Confirme o horário disponível pelo WhatsApp ao agendar.</p>
+      </address>
+      <div class="acoes">
+        <a class="btn btn-berry" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Av.+Rodrigues+da+Fonseca+1753+Porto+Alegre">Abrir no Google Maps</a>
+        <a class="btn btn-verde" target="_blank" rel="noopener" href="https://wa.me/5551998983084">WhatsApp</a>
+      </div>
+    </div>
+    <div class="mapa">
+      <!-- Para mapa interativo: no Google Maps, abra a clínica > Compartilhar > Incorporar um mapa,
+           copie o <iframe> e cole aqui no lugar do link abaixo. -->
+      <a class="mapa-card" target="_blank" rel="noopener" aria-label="Ver rota até a clínica no Google Maps"
+         href="https://www.google.com/maps/dir/?api=1&destination=Av.+Rodrigues+da+Fonseca+1753+Vila+Nova+Porto+Alegre">
+        <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <rect width="400" height="300" fill="#FDEAF2"/>
+          <g stroke="#fff" stroke-width="16" fill="none" stroke-linecap="round">
+            <path d="M-10 90 L410 60"/><path d="M-10 210 L410 240"/><path d="M110 -10 L140 310"/><path d="M300 -10 L270 310"/>
+          </g>
+          <g stroke="#fff" stroke-width="7" fill="none"><path d="M-10 150 L410 150"/><path d="M200 -10 L205 310"/></g>
+          <path d="M-10 280 C 100 230, 200 300, 410 250 L410 310 L-10 310Z" fill="#F7B9D2" opacity=".6"/>
+          <g transform="translate(176 92)">
+            <path d="M24 0C10.700 0 0 10.700 0 24c0 18 24 42 24 42s24-24 24-42C48 10.700 37.300 0 24 0Z" fill="#D6307A" stroke="#fff" stroke-width="3"/>
+            <circle cx="24" cy="24" r="9" fill="#fff"/>
+          </g>
+        </svg>
+        <span class="mapa-info">
+          <strong>Clínica de Podologia Simone Godoy</strong>
+          Av. Rodrigues da Fonseca, 1753 · Vila Nova
+          <span class="btn btn-berry">Ver rota no Google Maps</span>
+        </span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <p class="nome">Clínica de Podologia Simone Godoy</p>
+      <p>Técn. Podologia FEPLAN 05/5412 · Porto Alegre, RS</p>
+    </div>
+    <p>© <span id="ano"></span> Clínica de Podologia Simone Godoy</p>
+  </div>
+</footer>
+
+<a class="fab" id="fab" href="https://wa.me/5551998983084" target="_blank" rel="noopener">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15l-1.4 5 5.2-1.4A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.800s.7-2 .9-2.300c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.500l.8 2c.1.2.1.3 0 .5l-.4.600-.4.400c-.1.2-.3.3-.1.6.2.3.8 1.300 1.700 2.100 1.200 1 2.100 1.300 2.400 1.500.3.1.5.1.6-.1l.9-1.100c.2-.3.4-.2.6-.1l1.900.9c.3.1.5.2.5.3.1.1.1.6-.1 1.200Z"/></svg>
+  Agendar
+</a>
+
+<!-- Símbolo do pé (logotipo) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="pe" viewBox="0 0 60 68">
+    <g fill="#5C9A2E" stroke="#fff" stroke-width="1.5">
+      <ellipse cx="46" cy="8" rx="6" ry="6.5"/><ellipse cx="34" cy="9" rx="4.8" ry="5.2"/>
+      <ellipse cx="25" cy="12.5" rx="4" ry="4.4"/><ellipse cx="17" cy="17" rx="3.3" ry="3.6"/>
+      <path d="M43 20c-8-2-14 2-16 8-2 7 3 11 9 14 6 3 8 8 4 13-3 4-9 5-14 2-3-2-4-5-3-8-3 5-2 11 4 14 8 4 18 1 21-7 3-7-1-12-8-16-5-3-6-6-3-8 3-2 7-1 10 2 0-6-1-12-6-10Z"/>
+    </g>
+  </symbol>
+</svg>
+
+<script src="js/script.js"></script>
+</body>
+</html>
